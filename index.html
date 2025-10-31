@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>효율적 투자선 대시보드</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            color-scheme: light dark;
+            font-family: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #f5f7fa;
+            color: #1f2933;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #0f62fe, #3ddbd9);
+            color: white;
+            padding: 48px 24px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 12px 0 0;
+            font-size: 1.1rem;
+        }
+        main {
+            max-width: 960px;
+            margin: -32px auto 48px;
+            padding: 0 24px 48px;
+        }
+        section {
+            background: white;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 12px 40px rgba(15, 98, 254, 0.12);
+            margin-top: 32px;
+        }
+        h2 {
+            margin-top: 0;
+            font-size: 1.75rem;
+            color: #0b3d91;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 0.95rem;
+        }
+        .metrics-table th,
+        .metrics-table td {
+            border: 1px solid #d9e2ec;
+            padding: 12px 16px;
+            text-align: right;
+        }
+        .metrics-table th {
+            background-color: #f0f4f8;
+            text-align: center;
+        }
+        .chart-container {
+            margin-top: 16px;
+        }
+        footer {
+            text-align: center;
+            padding: 32px;
+            color: #52606d;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            section {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>세 종목 포트폴리오 효율적 투자선</h1>
+        <p>삼성전자, 애플, 엔비디아의 과거 일별 종가를 기반으로 효율적 투자선을 시각화한 대시보드입니다.</p>
+    </header>
+    <main>
+        <section>
+            <h2>데이터 개요</h2>
+            <ul>
+                <li>분석 기간: 2023-10-16 ~ 2025-10-10</li>
+                <li>거래일 수: 516일</li>
+                <li>사용 지표: 일별 종가(USD/원 단위 혼재)</li>
+            </ul>
+            <p>효율적 투자선은 자산의 기대수익률과 변동성(위험) 간의 균형을 설명합니다. 해당 그래프는 과거 수익률을 바탕으로 장기 투자 관점에서 최적화된 위험-수익 조합을 제시합니다.</p>
+        </section>
+        <section>
+            <h2>효율적 투자선</h2>
+            <div class="chart-container"><div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.1.1.min.js" integrity="sha256-HUEFyfiTnZJxCxur99FjbKYTvKSzwDaD3/x5TqHpFu4=" crossorigin="anonymous"></script>                <div id="823cecbf-6fb4-4e98-8526-e103dd4c8889" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("823cecbf-6fb4-4e98-8526-e103dd4c8889")) {                    Plotly.newPlot(                        "823cecbf-6fb4-4e98-8526-e103dd4c8889",                        [{"line":{"color":"#0066cc","width":3},"mode":"lines","name":"\ud6a8\uc728\uc801 \ud22c\uc790\uc120","x":{"dtype":"f8","bdata":"JJDdSrkZzT+Q1FVwMsjMPy\u002faMgPhgMw\u002fTDTJSRJEzD\u002frVZSSChLMP4kajc4D68s\u002fs59wUSzPyz839TLHpb7LP6eYHWyEucs\u002fNjIvks6\u002fyz+xk2t6fNHLPyVdP4R47ss\u002fgERZsJ8WzD+GXNtvwknMPzNs9rSlh8w\u002fyAE0NwTQzD+9aRjcjyLNPzolYzTzfs0\u002f7djt\u002ftLkzT+29Majz1POPxeDX5yGy84\u002fbo0wwJNLzz8K9dhvktPPPw44lU2PMdA\u002fGNRi0Op80D+IUtaDq8vQPyoaSIqiHdE\u002f8BbKnqJy0T9y+fA\u002fgMrRPxuAV80RJdI\u002fSIS3mS+C0j+7umbzs+HSP+S45yR7Q9M\u002fr8cYb2On0z9YB17+TA3UPznx9tsZddQ\u002f\u002fNyC3K3e1D+wgY6M7knVP4h03hvDttU\u002feuUISBQl1j+5adNGzJTWP5RosLDWBdc\u002fBm+iayB41z+h67mWl+vXP0g5U3YrYNg\u002fpv8uYczV2D9ga3Wua0zZPxQ1raT7w9k\u002fBI2paW882j\u002fhfW3zurXaP6r1\u002f\u002fnSL9s\u002f2icp6qyq2z\u002fAPBDZPibcP\u002f4Ur3h\u002fotw\u002fyDIRDWYf3T82fVJi6pzdP4B8UsMEG94\u002focsQ8a2Z3j9xwKca3xjfP\u002fir2tWRmN8\u002f"},"y":{"dtype":"f8","bdata":"s27Z7he\u002fyT\u002fVP5OkplvLP\u002fcQTVo1+Mw\u002fGOIGEMSUzj+dWeBiqRjQPy5Cvb3w5tA\u002fvyqaGDi10T9QE3dzf4PSP+H7U87GUdM\u002fcuQwKQ4g1D8CzQ2EVe7UP5S16t6cvNU\u002fJJ7HOeSK1j+2hqSUK1nXP0Zvge9yJ9g\u002f11deSrr12D9oQDulAcTZP\u002fkoGABJkto\u002fihH1WpBg2z8a+tG11y7cP6zirhAf\u002fdw\u002fPMuLa2bL3T\u002fOs2jGrZneP16cRSH1Z98\u002feEIRPh4b4D\u002fAtn\u002frQYLgPwkr7phl6eA\u002fUZ9cRolQ4T+ZE8vzrLfhP+KHOaHQHuI\u002fKvynTvSF4j9zcBb8F+3iP7vkhKk7VOM\u002fBFnzVl+74z9MzWEEgyLkP5VB0LGmieQ\u002f3bU+X8rw5D8mKq0M7lflP26eG7oRv+U\u002fthKKZzUm5j\u002f\u002fhvgUWY3mP0j7ZsJ89OY\u002fkG\u002fVb6Bb5z\u002fY40MdxMLnPyFYssrnKeg\u002facwgeAuR6D+yQI8lL\u002fjoP\u002fq0\u002fdJSX+k\u002fQylsgHbG6T+Lndotmi3qP9QRSdu9lOo\u002fHIa3iOH76j9l+iU2BWPrP61ulOMoyus\u002f9eICkUwx7D8+V3E+cJjsP4bL3+uT\u002f+w\u002fzz9Ombdm7T8XtLxG283tP2AoK\u002fT+NO4\u002f"},"type":"scatter"},{"marker":{"color":"#ff7f0e","size":12},"mode":"markers+text","name":"\uac1c\ubcc4 \uc790\uc0b0","text":["005930.KS","AAPL","NVDA"],"textposition":"top center","x":{"dtype":"f8","bdata":"YWox7xyw0z8M4irjqr7RP3YYQM21md8\u002f"},"y":{"dtype":"f8","bdata":"s27Z7he\u002fyT9Lgt8sQrzUP2AoK\u002fT+NO4\u002f"},"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1},"margin":{"l":40,"r":40,"t":60,"b":40},"title":{"text":"\uc0bc\uc131\uc804\uc790 \u00b7 \uc560\ud50c \u00b7 \uc5d4\ube44\ub514\uc544 \ud3ec\ud2b8\ud3f4\ub9ac\uc624 \ud6a8\uc728\uc801 \ud22c\uc790\uc120"},"xaxis":{"title":{"text":"\uc5f0\uac04 \ubcc0\ub3d9\uc131 (\u03c3)"}},"yaxis":{"title":{"text":"\uc5f0\uac04 \uae30\ub300\uc218\uc775\ub960 (\u03bc)"}}},                        {"responsive": true}                    )                };            </script>        </div></div>
+        </section>
+        <section>
+            <h2>자산별 기대수익률 &amp; 변동성</h2>
+            <table class="dataframe metrics-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>연간 기대수익률</th>
+      <th>연간 변동성</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>005930.KS</th>
+      <td>20.11%</td>
+      <td>30.76%</td>
+    </tr>
+    <tr>
+      <th>AAPL</th>
+      <td>32.40%</td>
+      <td>27.73%</td>
+    </tr>
+    <tr>
+      <th>NVDA</th>
+      <td>94.40%</td>
+      <td>49.38%</td>
+    </tr>
+  </tbody>
+</table>
+            <p style="margin-top:16px;">표의 수치는 일별 수익률을 기준으로 연 환산한 값입니다. 변동성은 표준편차로 표현되며, 효율적 투자선 상에서 동일한 기대수익을 제공하는 포트폴리오의 최소 위험 수준을 비교하는 기준이 됩니다.</p>
+        </section>
+    </main>
+    <footer>
+        © 2025 Efficient Frontier Dashboard
+    </footer>
+</body>
+</html>
